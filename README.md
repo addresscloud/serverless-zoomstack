@@ -1,2 +1,2 @@
 # serverless-zoomstack
-Serverless Zoomstack
+Serverless Zoomstack on AWS
