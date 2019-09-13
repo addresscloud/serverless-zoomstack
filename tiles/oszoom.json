@@ -1,0 +1,94 @@
+{
+	"center": [-0.173, 51.3859, 10],
+	"description": "Ordnance Survey Open Zoomstack 2019",
+	"attribution": "<a href=\"https://www.ordnancesurvey.co.uk/legal/\" target=\"_blank\">Contains OS data &copy; Crown copyright and database right 2019</a>",
+	"format": "pbf",
+	"id": "oszoom",
+	"mapbox_logo": false,
+	"maxzoom": 14,
+	"minzoom": 0,
+	"name": "oszoom",
+	"scheme": "xyz",
+	"tilejson": "2.2.0",
+	"tiles": ["https://a.tiles.zoomstack.xyz/oszoom/20190909/{z}/{x}/{y}.pbf", "https://b.tiles.zoomstack.xyz/oszoom/20190909/{z}/{x}/{y}.pbf"],
+	"vector_layers": [{
+		"id": "sea"
+	}, {
+		"id": "names",
+		"fields": {
+			"type": "String",
+			"name1": "String",
+			"name1language": "String",
+			"name2": "String",
+			"name2language": "String"
+		}
+	}, {
+		"id": "rail",
+		"fields": {
+			"type": "String"
+		}
+	}, {
+		"id": "waterlines",
+		"fields": {
+			"type": "String"
+		}
+	}, {
+		"id": "etl"
+	}, {
+		"id": "foreshore"
+	}, {
+		"id": "sites",
+		"fields": {
+			"type": "String"
+		}
+	}, {
+		"id": "railwaystations",
+		"fields": {
+			"type": "String",
+			"name": "String"
+		}
+	}, {
+		"id": "roads",
+		"fields": {
+			"type": "String",
+			"name": "String",
+			"number": "String",
+			"level": "Number"
+		}
+	}, {
+		"id": "greenspaces",
+		"fields": {
+			"type": "String"
+		}
+	}, {
+		"id": "contours",
+		"fields": {
+			"type": "String",
+			"height": "Number"
+		}
+	}, {
+		"id": "buildings",
+		"fields": {
+			"uuid": "String"
+		}
+	}, {
+		"id": "boundaries",
+		"fields": {
+			"type": "String"
+		}
+	}, {
+		"id": "airports",
+		"fields": {
+			"name": "String"
+		}
+	}, {
+		"id": "woodland"
+	}, {
+		"id": "national_parks"
+	}, {
+		"id": "urban_areas"
+	}, {
+		"id": "surfacewater"
+	}],
+	"version": "2"
+}
