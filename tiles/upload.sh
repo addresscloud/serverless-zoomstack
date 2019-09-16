@@ -23,3 +23,6 @@ aws s3 cp sprites s3://tiles.zoomstack.xyz/oszoom/sprites --recursive --quiet
 
 # Copy the fonts up to the bucket (again, setting the correct headers, note that these files are not compressed)
 aws s3 cp fonts s3://tiles.zoomstack.xyz/oszoom/fonts --recursive --content-type application/x-protobuf --quiet
+
+# Copy the map application up to the www bucket
+aws s3 cp ../map/ s3://www.zoomstack.xyz/ --recursive --quiet
