@@ -15,7 +15,7 @@
 			"type": "vector"
 		}
 	},
-	"sprite": "https://tiles.zoomstack.xyz/oszoom/styles/sprites/sprite",
+	"sprite": "https://tiles.zoomstack.xyz/oszoom/sprites/sprite",
 	"glyphs": "https://tiles.zoomstack.xyz/oszoom/fonts/{fontstack}/{range}.pbf",
 	"layers": [{
 			"id": "background",

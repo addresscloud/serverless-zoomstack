@@ -19,20 +19,7 @@ time aws s3 cp /data/oszoom/20190912 s3://tiles.zoomstack.xyz/oszoom/20190912/ -
 aws s3 cp oszoom.json s3://tiles.zoomstack.xyz/oszoom/oszoom.json --content-type application/json --cache-control max-age=3600
 
 # Copy the sprites up to the bucket
-aws s3 cp styles/sprites s3://tiles.zoomstack.xyz/oszoom/styles/sprites --recursive --quiet
+aws s3 cp sprites s3://tiles.zoomstack.xyz/oszoom/sprites --recursive --quiet
 
 # Copy the fonts up to the bucket (again, setting the correct headers, note that these files are not compressed)
-aws s3 cp styles/fonts s3://tiles.zoomstack.xyz/oszoom/styles/fonts --recursive --content-type application/x-protobuf --quiet
-
-# Running the same S3 upload on a larger machine (i3.large) with the max_concurrent_requests increaed from the default of 10 to 100
-aws configure set default.s3.max_concurrent_requests 20
-
-
-# The same process using S3 parallel put
-time s3-parallel-put \
-    --bucket=tiles.zoomstack.xyz \
-    --bucket_region=eu-west-1 \
-    --put=stupid \
-    --quiet \
-    --dry-run --limit=1 \
-    .
+aws s3 cp fonts s3://tiles.zoomstack.xyz/oszoom/fonts --recursive --content-type application/x-protobuf --quiet

@@ -43,24 +43,35 @@
 
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWRkcmVzc2Nsb3VkIiwiYSI6ImNqODM2MzZrYTMxajEyd280YXFseG4xeGEifQ.xQ9RxXGZ0Tdxh5YB_0-V5w';
-var map = new mapboxgl.Map({
+const map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'styles/road.json', // stylesheet location
     center: [-0.1423, 51.5011], // starting position [lng, lat]
     zoom: 13 // starting zoom
 })
 
-var layerList = document.getElementById('menu');
-var inputs = layerList.getElementsByTagName('input');
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl())
+
+// Add a fullscreen control
+map.addControl(new mapboxgl.FullscreenControl())
+
+// Add geolocate control to the map
+map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: { enableHighAccuracy: true },
+    trackUserLocation: true
+}))
+
+const layerList = document.getElementById('menu')
+const inputs = layerList.getElementsByTagName('input')
 
 function switchLayer(layer) {
-  var layerId = layer.target.id;
-  map.setStyle('styles/' + layerId + '.json');
+  const layerId = layer.target.id
+  map.setStyle('styles/' + layerId + '.json')
 }
 
-for (var i = 0; i < inputs.length; i++) {
-  inputs[i].onclick = switchLayer;
+for (const i = 0; i < inputs.length; i++) {
+  inputs[i].onclick = switchLayer
 }
 
 </script>
