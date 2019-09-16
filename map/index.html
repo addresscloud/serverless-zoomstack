@@ -43,7 +43,7 @@
 
 <script>
 
-const map = new mapboxgl.Map({
+var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'styles/road.json', // stylesheet location
     center: [-0.1423, 51.5011], // starting position [lng, lat]
@@ -62,15 +62,15 @@ map.addControl(new mapboxgl.GeolocateControl({
     trackUserLocation: true
 }))
 
-const layerList = document.getElementById('menu')
-const inputs = layerList.getElementsByTagName('input')
+var layerList = document.getElementById('menu')
+var inputs = layerList.getElementsByTagName('input')
 
 function switchLayer(layer) {
-  const layerId = layer.target.id
+  var layerId = layer.target.id
   map.setStyle('styles/' + layerId + '.json')
 }
 
-for (const i = 0; i < inputs.length; i++) {
+for (var i = 0; i < inputs.length; i++) {
   inputs[i].onclick = switchLayer
 }
 
