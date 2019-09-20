@@ -7,12 +7,12 @@ mv *.mbtiles* /data/oszoom/oszoom.mbtiles
 
 # Use mb-util to explode the mbtiles to a directory in pbf format
 # (mb-util can be downloaded from https://github.com/mapbox/mbutil)
-mb-util /data/oszoom/oszoom.mbtiles /data/oszoom/20190912 --image_format pbf --silent
+mb-util /data/oszoom/oszoom.mbtiles /data/oszoom/YYYYMMDD --image_format pbf --silent
 
 # Copy the tiles up to our bucket with the all-important metadata
-time aws s3 cp /data/oszoom/20190912 s3://tiles.zoomstack.xyz/oszoom/20190912/ --recursive --content-type application/x-protobuf --content-encoding 'gzip' --quiet
+aws s3 cp YYYYMMDD s3://tiles.zoomstack.xyz/oszoom/YYYYMMDD/ --recursive --content-type application/x-protobuf --content-encoding 'gzip' --quiet
 
-# Prepare the tile.json file using information from s3://tiles.zoomstack.xyz/oszoom/20190912/metadata.json
+# Prepare the tile.json file using information from s3://tiles.zoomstack.xyz/oszoom/YYYYMMDD/metadata.json
 # IMPORTANT: be sure to change metadata to remove gzip encoding and set type to applicaton/json
 
 # Copy up the oszoom.json file to the bucket
